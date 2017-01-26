@@ -1,0 +1,33 @@
+.rating {
+	display: flex;
+    justify-content: flex-end;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.rating__input {
+	display: none;
+}
+
+.rating__label::before {
+	content: "";
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	background: url("../assets/icons/inactive.svg") center/22px 22px no-repeat;
+}
+
+.rating__label:hover::before,
+.rating__label:hover ~ .rating__label::before,
+.rating__input:checked ~ .rating__label::before {
+	background: url("../assets/icons/active.svg") center/22px 22px no-repeat;
+}
+
+.rating__label.active::before {
+	animation: animationStar 1s linear;
+}
+
+@keyframes animationStar {
+	0% {transform: scale(2,2);}
+	100% {transform: scale(1,1);}
+}
