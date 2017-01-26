@@ -15,10 +15,10 @@ var starsModule = (function() {
 		var element = event.target;
 
 		for (var i = 0; i < stars.length; i++) {
-			stars[i].classList.remove("active");
+			stars[i].classList.remove("_active");
 		}
 
-		element.classList.add("active");
+		element.classList.add("_active");
 	};
 	
 	return {
